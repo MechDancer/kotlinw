@@ -1,4 +1,4 @@
-package org.mechdancer.kotlinw.internal
+package org.mechdancer.kotlinw.core
 
 import org.jetbrains.kotlin.cli.common.CLIConfigurationKeys
 import org.jetbrains.kotlin.cli.common.messages.MessageCollector
@@ -6,6 +6,7 @@ import org.jetbrains.kotlin.cli.jvm.compiler.EnvironmentConfigFiles
 import org.jetbrains.kotlin.cli.jvm.compiler.KotlinCoreEnvironment
 import org.jetbrains.kotlin.cli.jvm.config.addJvmClasspathRoot
 import org.jetbrains.kotlin.com.intellij.openapi.Disposable
+import org.jetbrains.kotlin.com.intellij.psi.PsiFile
 import org.jetbrains.kotlin.com.intellij.psi.PsiFileFactory
 import org.jetbrains.kotlin.config.CommonConfigurationKeys
 import org.jetbrains.kotlin.config.CompilerConfiguration
@@ -24,19 +25,18 @@ object EnvironmentUtil {
 	/**
 	 * 创建空的 "可丢弃" 实例 intellij api 中需要
 	 * 请见 [Disposable]
-	 * */
+	 */
 	fun createDisposable() = Disposable { }
 
 	/**
 	 * 从编译环境获取工程的 Psi 文件工厂
-	 * 请见 [org.jetbrains.kotlin.com.intellij.psi.PsiFile]
-	 * */
+	 * 请见 [PsiFile]
+	 */
 	fun getPsiFactory(environment: KotlinCoreEnvironment): PsiFileFactory =
 			PsiFileFactory.getInstance(environment.project)
 
 	/**
 	 * 构建编译环境实例
-	 *
 	 * @param name 用于生成代码的 kotlin 模块名。默认为 `null`
 	 */
 	fun createEnvironment(name: String? = null): KotlinCoreEnvironment {

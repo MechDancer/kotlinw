@@ -1,10 +1,9 @@
-package org.mechdancer.kotlinw.internal
+package org.mechdancer.kotlinw.core
 
 import java.io.File
 
 /**
  * 路径类加载器
- *
  * 从指定路径加载类文件
  * @param path 路径
  * @param parent 父类加载器 默认为 `null`

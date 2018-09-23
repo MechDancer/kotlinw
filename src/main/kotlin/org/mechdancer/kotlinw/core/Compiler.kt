@@ -1,4 +1,4 @@
-package org.mechdancer.kotlinw.internal
+package org.mechdancer.kotlinw.core
 
 import org.jetbrains.kotlin.backend.jvm.JvmIrCodegenFactory
 import org.jetbrains.kotlin.cli.common.output.writeAllTo
@@ -12,13 +12,11 @@ import java.io.File
 
 /**
  * 编译器工具类
- *
  * 将 kt 文件编译为 class 文件
  */
 object Compiler {
 	/**
 	 * 编译单个 kt 文件
-	 *
 	 * @param file kt psi 文件
 	 * @param environment 编译环境
 	 */
@@ -27,7 +25,6 @@ object Compiler {
 
 	/**
 	 * 编译一组 kt 文件
-	 *
 	 * @param files 多个 kt psi 文件
 	 * @param environment 编译环境
 	 */
@@ -50,7 +47,6 @@ object Compiler {
 
 	/**
 	 * 写入编译好的 class 至文件
-	 *
 	 * @param state 编译结果
 	 * @param dir 要写入的文件夹
 	 */
@@ -60,7 +56,6 @@ object Compiler {
 
 	/**
 	 * 加载编译好的 class
-	 *
 	 * @param state 编译结果
 	 * @return 编译完成的类
 	 */

@@ -1,4 +1,4 @@
-package org.mechdancer.kotlinw.internal
+package org.mechdancer.kotlinw.core
 
 import org.jetbrains.kotlin.cli.jvm.config.addJvmClasspathRoot
 import org.jetbrains.kotlin.cli.jvm.repl.ReplInterpreter
@@ -7,7 +7,7 @@ import org.jetbrains.kotlin.config.CommonConfigurationKeys
 import org.jetbrains.kotlin.config.CompilerConfiguration
 
 /**
- *解释器
+ * 解释器
  */
 object Evaluator {
 	private val interpreter = ReplInterpreter(
@@ -20,7 +20,6 @@ object Evaluator {
 
 	/**
 	 * 交互式解释器
-	 *
 	 * @param code 输入代码
 	 * @return 执行结果
 	 */

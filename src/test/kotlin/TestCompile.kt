@@ -1,20 +1,20 @@
 import org.junit.Assert
 import org.junit.Test
-import org.mechdancer.kotlinw.internal.Analyzer
-import org.mechdancer.kotlinw.internal.Compiler
-import org.mechdancer.kotlinw.internal.EnvironmentUtil
+import org.mechdancer.kotlinw.core.Analyzer
+import org.mechdancer.kotlinw.core.Compiler
+import org.mechdancer.kotlinw.core.EnvironmentUtil
 
 class TestCompile {
 	@Test
 	fun test() {
 		val src = """
-		@file:JvmName("Main")
 		package banana
 
 		fun b() = 2
 
-		fun a() {
+		fun a() = run {
 			println("a")
+			"ok"
 		}
 	""".trimIndent()
 
