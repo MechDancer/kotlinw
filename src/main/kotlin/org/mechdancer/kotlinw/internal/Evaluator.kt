@@ -6,16 +6,14 @@ import org.jetbrains.kotlin.cli.jvm.repl.configuration.ConsoleReplConfiguration
 import org.jetbrains.kotlin.config.CommonConfigurationKeys
 import org.jetbrains.kotlin.config.CompilerConfiguration
 
-class Evaluator {
-
+object Evaluator {
 	private val interpreter = ReplInterpreter(
-			EnvironmentUtil.createDisposable(),
-			CompilerConfiguration().apply {
-				addJvmClasspathRoot(EnvironmentUtil.getStdlibPath())
-				put(CommonConfigurationKeys.MODULE_NAME, "foo")
-			},
-			ConsoleReplConfiguration())
+		EnvironmentUtil.createDisposable(),
+		CompilerConfiguration().apply {
+			addJvmClasspathRoot(EnvironmentUtil.getStdlibPath())
+			put(CommonConfigurationKeys.MODULE_NAME, "foo")
+		},
+		ConsoleReplConfiguration())
 
-	fun eval(code: String) =
-			interpreter.eval(code)
+	fun eval(code: String) = interpreter.eval(code)
 }

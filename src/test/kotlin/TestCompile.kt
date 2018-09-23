@@ -27,6 +27,5 @@ class TestCompile {
 			it.getMethod("a").invoke(null)
 			Assert.assertEquals(2, it.getMethod("b").invoke(null))
 		}
-
 	}
 }
