@@ -7,12 +7,11 @@ class TestScript {
 	fun test() {
 		val r =
 			"""
-				val num = this as Int
 				println("hello world")
-				num * 2
+				this * 2
 			"""
 				.trimIndent()
-				.run { 100.script<Int>(this)() }
+				.run { 100.script<Int, Int>(this)() }
 		Assert.assertEquals(200, r)
 	}
 }
