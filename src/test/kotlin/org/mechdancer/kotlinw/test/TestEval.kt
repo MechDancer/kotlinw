@@ -1,3 +1,5 @@
+package org.mechdancer.kotlinw.test
+
 import org.junit.Assert
 import org.junit.Test
 import org.mechdancer.kotlinw.core.Evaluator

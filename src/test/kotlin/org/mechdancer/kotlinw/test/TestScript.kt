@@ -1,3 +1,5 @@
+package org.mechdancer.kotlinw.test
+
 import org.junit.Assert
 import org.junit.Test
 import org.mechdancer.kotlinw.external.compileScript
@@ -6,7 +8,7 @@ class TestScript {
 	@Test
 	fun test() {
 		val script =
-			"""
+				"""
 				println("hello world")
 				this * 2
 			""".trimIndent()

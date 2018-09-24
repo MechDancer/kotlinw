@@ -1,3 +1,5 @@
+package org.mechdancer.kotlinw.test
+
 import org.junit.Assert
 import org.junit.Test
 import org.mechdancer.kotlinw.core.Analyzer
@@ -13,7 +15,6 @@ class TestCompile {
 		fun b() = 2
 
 		fun a() = run {
-			println("a")
 			"ok"
 		}
 	""".trimIndent()
