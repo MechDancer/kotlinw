@@ -7,11 +7,11 @@ import org.mechdancer.kotlinw.core.EnvironmentUtil
 /**
  * 将一段代码文本视作脚本并转换为函数
  */
-inline fun <reified T, R> T.script(
+inline fun <reified T, R> compileScript(
 	action: String,
 	`package`: String = "script",
 	vararg reference: String
-) =
+): T.() -> R =
 	StringBuilder()
 		.apply {
 			if (`package`.isNotBlank()) append("package $`package`\n")
@@ -32,7 +32,6 @@ inline fun <reified T, R> T.script(
 				.loadClasses(result)[0]
 				.methods
 				.first { method -> method.name == "f" }
-
 		}.let {
 			{
 				@Suppress("UNCHECKED_CAST")
