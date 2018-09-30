@@ -1,9 +1,17 @@
-plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.2.70'
+buildscript {
+    dependencies {
+        classpath 'com.novoda:bintray-release:0.8.1'
+    }
 }
 
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.2.71'
+}
+
+apply plugin: 'com.novoda.bintray-release'
+
 group 'org.mechdancer'
-version '1.0-SNAPSHOT'
+version '0.1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
@@ -21,4 +29,13 @@ compileKotlin {
 }
 compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
+}
+
+publish {
+    userOrg = 'mechdancer'
+    groupId = 'org.mechdancer'
+    artifactId = 'kotlinw'
+    publishVersion = '0.1.0'
+    desc = 'kotlin compiler api wrapper'
+    website = 'https://github.com/MechDancer/kotlinw'
 }
