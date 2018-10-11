@@ -87,3 +87,5 @@ fabric.properties
 !/gradle/wrapper/gradle-wrapper.jar
 .idea/codeStyles/
 .idea/linearalgebra.iml
+
+.idea
