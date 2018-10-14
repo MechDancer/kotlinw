@@ -36,3 +36,5 @@ inline fun <reified T, R> compileScript(
 						it(null, this) as R
 					}
 				}
+
+inline fun <reified T,R> String.compileScript(): (T) -> R = compileScript(this)
